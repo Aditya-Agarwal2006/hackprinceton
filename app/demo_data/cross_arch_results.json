@@ -1,0 +1,23 @@
+{
+  "mistral-7b": {
+    "udc_auc": 0.684,
+    "architecture": "transformer",
+    "source": "legacy partial-AUC result"
+  },
+  "qwen2.5-7b": {
+    "udc_auc": 0.708,
+    "architecture": "transformer",
+    "source": "legacy partial-AUC result"
+  },
+  "mamba-370m": {
+    "udc_auc": 0.726,
+    "architecture": "ssm",
+    "source": "legacy partial-AUC result"
+  },
+  "gemma4-e2b": {
+    "udc_auc": 0.7429217898467073,
+    "architecture": "transformer",
+    "feature": "udc_median_tok",
+    "note": "current hackathon Gemma result"
+  }
+}

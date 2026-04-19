@@ -1,0 +1,10 @@
+{
+  "metric": "udc_median_tok",
+  "higher_is_more_factual": false,
+  "pass_threshold": 0.10177547110958915,
+  "review_threshold": 0.08909871309587017,
+  "aligned_hall_median": 0.08296877091271648,
+  "aligned_factual_median": 0.10305956720774284,
+  "source": "demo_examples_8",
+  "notes": "Fit on 4 factual + 4 confabulated demo examples. Use for demo only."
+}

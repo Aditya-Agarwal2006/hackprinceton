@@ -1,0 +1,13 @@
+{
+  "benchmark": "BENCH-2 (length-matched HaluEval QA)",
+  "headline_metric": "udc_median_tok",
+  "auc_udc": 0.7429217898467073,
+  "auc_tle": 0.5980529678649091,
+  "auc_length": 0.5631627694703214,
+  "udc_ci": [
+    0.7180689105632875,
+    0.7667913938202934
+  ],
+  "n_pairs": 772,
+  "truthfulqa_auc": 0.5007880279675021
+}

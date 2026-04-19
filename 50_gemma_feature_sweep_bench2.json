@@ -1,0 +1,209 @@
+{
+  "dataset": "bench2",
+  "n_examples": 1544,
+  "n_pairs": 772,
+  "hallucinated_fraction": 0.5,
+  "length_mean_hall": 6.0479274611398965,
+  "length_mean_factual": 5.410621761658031,
+  "top_features_by_auc": [
+    {
+      "metric": "udc_median_tok",
+      "auc": 0.7429217898467073,
+      "partial_auc_len": 0.7362966119895836,
+      "rho_len": 0.09406541577125295,
+      "higher_is_more_factual": false
+    },
+    {
+      "metric": "udc_mean_tok_mean",
+      "auc": 0.7395668340089667,
+      "partial_auc_len": 0.7326069156218958,
+      "rho_len": 0.09857168930958222,
+      "higher_is_more_factual": false
+    },
+    {
+      "metric": "udc_tail3_mean",
+      "auc": 0.7304977985986202,
+      "partial_auc_len": 0.723104982684099,
+      "rho_len": 0.14930964851358594,
+      "higher_is_more_factual": false
+    },
+    {
+      "metric": "udc_p25_tok",
+      "auc": 0.7052722891889716,
+      "partial_auc_len": 0.7052353754463208,
+      "rho_len": -0.04969377107562827,
+      "higher_is_more_factual": false
+    },
+    {
+      "metric": "udc_tail3_min",
+      "auc": 0.6918499489919192,
+      "partial_auc_len": 0.689572203280625,
+      "rho_len": 0.06854025140760146,
+      "higher_is_more_factual": false
+    },
+    {
+      "metric": "udc_p10_tok",
+      "auc": 0.673258845875057,
+      "partial_auc_len": 0.6804687709737174,
+      "rho_len": -0.15724260691021838,
+      "higher_is_more_factual": false
+    },
+    {
+      "metric": "udc_worst2_mean",
+      "auc": 0.6588406735751295,
+      "partial_auc_len": 0.6846618365593707,
+      "rho_len": -0.3537498180581251,
+      "higher_is_more_factual": false
+    },
+    {
+      "metric": "udc_min_tok",
+      "auc": 0.6429165883647884,
+      "partial_auc_len": 0.6568548820102553,
+      "rho_len": -0.2533490494589603,
+      "higher_is_more_factual": false
+    }
+  ],
+  "results": {
+    "udc_mean_tok_mean": {
+      "metric": "udc_mean_tok_mean",
+      "auc": 0.7395668340089667,
+      "ci_lo": 0.7146297844199616,
+      "ci_hi": 0.7635646328131035,
+      "partial_auc_len": 0.7326069156218958,
+      "rho_len": 0.09857168930958222,
+      "higher_is_more_factual": false
+    },
+    "udc_min_tok": {
+      "metric": "udc_min_tok",
+      "auc": 0.6429165883647884,
+      "ci_lo": 0.6151376143391419,
+      "ci_hi": 0.6703669984822054,
+      "partial_auc_len": 0.6568548820102553,
+      "rho_len": -0.2533490494589603,
+      "higher_is_more_factual": false
+    },
+    "udc_p10_tok": {
+      "metric": "udc_p10_tok",
+      "auc": 0.673258845875057,
+      "ci_lo": 0.6466588023236244,
+      "ci_hi": 0.6991413874823414,
+      "partial_auc_len": 0.6804687709737174,
+      "rho_len": -0.15724260691021838,
+      "higher_is_more_factual": false
+    },
+    "udc_p25_tok": {
+      "metric": "udc_p25_tok",
+      "auc": 0.7052722891889716,
+      "ci_lo": 0.6792850869909827,
+      "ci_hi": 0.7308296666080384,
+      "partial_auc_len": 0.7052353754463208,
+      "rho_len": -0.04969377107562827,
+      "higher_is_more_factual": false
+    },
+    "udc_median_tok": {
+      "metric": "udc_median_tok",
+      "auc": 0.7429217898467073,
+      "ci_lo": 0.7180689105632875,
+      "ci_hi": 0.7667913938202934,
+      "partial_auc_len": 0.7362966119895836,
+      "rho_len": 0.09406541577125295,
+      "higher_is_more_factual": false
+    },
+    "udc_first_tok": {
+      "metric": "udc_first_tok",
+      "auc": 0.5680924320115976,
+      "ci_lo": 0.5393511256552858,
+      "ci_hi": 0.5943518843466155,
+      "partial_auc_len": 0.5616199428172568,
+      "rho_len": 0.11107201790093067,
+      "higher_is_more_factual": false
+    },
+    "udc_last_tok": {
+      "metric": "udc_last_tok",
+      "auc": 0.5654195414642004,
+      "ci_lo": 0.534344096091075,
+      "ci_hi": 0.5937035615599396,
+      "partial_auc_len": 0.5542967596445542,
+      "rho_len": 0.11865461791808875,
+      "higher_is_more_factual": false
+    },
+    "udc_tail3_mean": {
+      "metric": "udc_tail3_mean",
+      "auc": 0.7304977985986202,
+      "ci_lo": 0.704018548535055,
+      "ci_hi": 0.755795568705426,
+      "partial_auc_len": 0.723104982684099,
+      "rho_len": 0.14930964851358594,
+      "higher_is_more_factual": false
+    },
+    "udc_tail3_min": {
+      "metric": "udc_tail3_min",
+      "auc": 0.6918499489919192,
+      "ci_lo": 0.6651426513582209,
+      "ci_hi": 0.7180882550448242,
+      "partial_auc_len": 0.689572203280625,
+      "rho_len": 0.06854025140760146,
+      "higher_is_more_factual": false
+    },
+    "udc_worst2_mean": {
+      "metric": "udc_worst2_mean",
+      "auc": 0.6588406735751295,
+      "ci_lo": 0.6318075038834579,
+      "ci_hi": 0.6867831455008485,
+      "partial_auc_len": 0.6846618365593707,
+      "rho_len": -0.3537498180581251,
+      "higher_is_more_factual": false
+    },
+    "udc_range_tok": {
+      "metric": "udc_range_tok",
+      "auc": 0.6079785698944937,
+      "ci_lo": 0.5784159658850196,
+      "ci_hi": 0.635344808344806,
+      "partial_auc_len": 0.5871575411420441,
+      "rho_len": 0.5884197862990073,
+      "higher_is_more_factual": false
+    },
+    "tle_mean_tok_mean": {
+      "metric": "tle_mean_tok_mean",
+      "auc": 0.5980529678649091,
+      "ci_lo": 0.5702925548025793,
+      "ci_hi": 0.6269960242895238,
+      "partial_auc_len": 0.588811109023061,
+      "rho_len": -0.202753272710615,
+      "higher_is_more_factual": true
+    },
+    "tle_max_tok": {
+      "metric": "tle_max_tok",
+      "auc": 0.54324277161803,
+      "ci_lo": 0.5148251030107631,
+      "ci_hi": 0.5720662031542837,
+      "partial_auc_len": 0.5497932830411555,
+      "rho_len": 0.07467982214040814,
+      "higher_is_more_factual": true
+    },
+    "tle_p75_tok": {
+      "metric": "tle_p75_tok",
+      "auc": 0.5944874359043196,
+      "ci_lo": 0.5670525232431503,
+      "ci_hi": 0.6224093955863376,
+      "partial_auc_len": 0.5886533866680985,
+      "rho_len": -0.12751701463164217,
+      "higher_is_more_factual": true
+    },
+    "response_length": {
+      "metric": "response_length",
+      "auc": 0.5631627694703214,
+      "ci_lo": 0.5342329540010029,
+      "ci_hi": 0.5920294178382313,
+      "partial_auc_len": null,
+      "rho_len": null,
+      "higher_is_more_factual": false
+    }
+  },
+  "experiment": "50_gemma_feature_sweep",
+  "model": "google/gemma-4-e2b-it",
+  "use_chat_template": "always",
+  "elapsed_seconds": 162.88080310821533,
+  "n_errors": 0,
+  "errors": []
+}

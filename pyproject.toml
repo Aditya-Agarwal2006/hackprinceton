@@ -1,0 +1,14 @@
+[project]
+name = "confab-hackprinceton"
+version = "0.1.0"
+description = "HackPrinceton Component 1: pure UDC engine for LLM confabulation verification."
+requires-python = ">=3.10,<3.13"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+  "integration: tests that download a tiny Hugging Face model",
+]
+

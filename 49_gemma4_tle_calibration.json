@@ -1,0 +1,10 @@
+{
+  "metric": "tle_scalar",
+  "higher_is_more_factual": true,
+  "pass_threshold": 1.0954471111347348,
+  "review_threshold": 1.0402802901933117,
+  "aligned_hall_median": 0.9851134692518881,
+  "aligned_factual_median": 1.1506139320761581,
+  "source": "BENCH-2",
+  "notes": "Model=google/gemma-4-e2b-it"
+}

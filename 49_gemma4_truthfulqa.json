@@ -1,0 +1,43 @@
+{
+  "dataset": "truthfulqa",
+  "n_examples": 1634,
+  "n_pairs": 817,
+  "hallucinated_fraction": 0.5,
+  "length_mean_hall": 9.903304773561812,
+  "length_mean_factual": 10.195838433292534,
+  "results": {
+    "udc_scalar": {
+      "metric": "udc_scalar",
+      "auc": 0.5063304414005324,
+      "ci_lo": 0.5005870747094008,
+      "ci_hi": 0.5354927608839187,
+      "partial_auc_len": 0.5027948026109794,
+      "rho_len": 0.18227468296202146,
+      "higher_is_more_factual": true
+    },
+    "tle_scalar": {
+      "metric": "tle_scalar",
+      "auc": 0.5227052430826575,
+      "ci_lo": 0.5016700889164678,
+      "ci_hi": 0.5492615573685287,
+      "partial_auc_len": 0.5226617966738029,
+      "rho_len": 0.0932959985495252,
+      "higher_is_more_factual": true
+    },
+    "response_length": {
+      "metric": "response_length",
+      "auc": 0.5171515935094062,
+      "ci_lo": 0.500951665724968,
+      "ci_hi": 0.5446218601030354,
+      "partial_auc_len": null,
+      "rho_len": null,
+      "higher_is_more_factual": true
+    }
+  },
+  "experiment": "49_gemma4_trajectory",
+  "model": "google/gemma-4-e2b-it",
+  "use_chat_template": "always",
+  "elapsed_seconds": 202.61044549942017,
+  "n_errors": 0,
+  "errors": []
+}

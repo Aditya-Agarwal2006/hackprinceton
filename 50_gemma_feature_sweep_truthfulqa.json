@@ -1,0 +1,209 @@
+{
+  "dataset": "truthfulqa",
+  "n_examples": 1634,
+  "n_pairs": 817,
+  "hallucinated_fraction": 0.5,
+  "length_mean_hall": 9.903304773561812,
+  "length_mean_factual": 10.195838433292534,
+  "top_features_by_auc": [
+    {
+      "metric": "udc_range_tok",
+      "auc": 0.5376118557759004,
+      "partial_auc_len": 0.5387684291426524,
+      "rho_len": 0.572306498515614,
+      "higher_is_more_factual": false
+    },
+    {
+      "metric": "udc_tail3_min",
+      "auc": 0.5333728346085104,
+      "partial_auc_len": 0.5321570842365941,
+      "rho_len": 0.0707266221223554,
+      "higher_is_more_factual": true
+    },
+    {
+      "metric": "udc_tail3_mean",
+      "auc": 0.5289045961806111,
+      "partial_auc_len": 0.5273360310057544,
+      "rho_len": 0.10656383550414607,
+      "higher_is_more_factual": true
+    },
+    {
+      "metric": "udc_min_tok",
+      "auc": 0.5252371200124647,
+      "partial_auc_len": 0.527201197323102,
+      "rho_len": -0.1561535596467355,
+      "higher_is_more_factual": true
+    },
+    {
+      "metric": "udc_worst2_mean",
+      "auc": 0.524288789777809,
+      "partial_auc_len": 0.5263367636020968,
+      "rho_len": -0.18968005001709223,
+      "higher_is_more_factual": true
+    },
+    {
+      "metric": "tle_mean_tok_mean",
+      "auc": 0.5227052430826575,
+      "partial_auc_len": 0.5226617966738029,
+      "rho_len": 0.0932959985495252,
+      "higher_is_more_factual": true
+    },
+    {
+      "metric": "udc_p10_tok",
+      "auc": 0.5216580348140569,
+      "partial_auc_len": 0.5216055994930253,
+      "rho_len": 0.0007673962447567733,
+      "higher_is_more_factual": true
+    },
+    {
+      "metric": "response_length",
+      "auc": 0.5171515935094062,
+      "partial_auc_len": null,
+      "rho_len": null,
+      "higher_is_more_factual": true
+    }
+  ],
+  "results": {
+    "udc_mean_tok_mean": {
+      "metric": "udc_mean_tok_mean",
+      "auc": 0.5063304414005324,
+      "ci_lo": 0.5005870747094008,
+      "ci_hi": 0.5354927608839187,
+      "partial_auc_len": 0.5027948026109794,
+      "rho_len": 0.18227468296202146,
+      "higher_is_more_factual": true
+    },
+    "udc_min_tok": {
+      "metric": "udc_min_tok",
+      "auc": 0.5252371200124647,
+      "ci_lo": 0.5025354803193995,
+      "ci_hi": 0.5521675349051876,
+      "partial_auc_len": 0.527201197323102,
+      "rho_len": -0.1561535596467355,
+      "higher_is_more_factual": true
+    },
+    "udc_p10_tok": {
+      "metric": "udc_p10_tok",
+      "auc": 0.5216580348140569,
+      "ci_lo": 0.5014502507345089,
+      "ci_hi": 0.5495302070828949,
+      "partial_auc_len": 0.5216055994930253,
+      "rho_len": 0.0007673962447567733,
+      "higher_is_more_factual": true
+    },
+    "udc_p25_tok": {
+      "metric": "udc_p25_tok",
+      "auc": 0.5153223498814212,
+      "ci_lo": 0.5008452091855122,
+      "ci_hi": 0.5435526069221568,
+      "partial_auc_len": 0.5136339325442068,
+      "rho_len": 0.08184777882389879,
+      "higher_is_more_factual": true
+    },
+    "udc_median_tok": {
+      "metric": "udc_median_tok",
+      "auc": 0.5007880279675021,
+      "ci_lo": 0.500487166829835,
+      "ci_hi": 0.532971564083831,
+      "partial_auc_len": 0.5046682417238336,
+      "rho_len": 0.18411147014171328,
+      "higher_is_more_factual": false
+    },
+    "udc_first_tok": {
+      "metric": "udc_first_tok",
+      "auc": 0.5119694856394638,
+      "ci_lo": 0.5008351176103145,
+      "ci_hi": 0.5401999396800778,
+      "partial_auc_len": 0.5155103679611199,
+      "rho_len": 0.23041984764396437,
+      "higher_is_more_factual": false
+    },
+    "udc_last_tok": {
+      "metric": "udc_last_tok",
+      "auc": 0.5163291080452262,
+      "ci_lo": 0.5009687920313444,
+      "ci_hi": 0.5473807022003144,
+      "partial_auc_len": 0.5121777287715603,
+      "rho_len": 0.2536215642241346,
+      "higher_is_more_factual": true
+    },
+    "udc_tail3_mean": {
+      "metric": "udc_tail3_mean",
+      "auc": 0.5289045961806111,
+      "ci_lo": 0.5045306532801349,
+      "ci_hi": 0.557988642301169,
+      "partial_auc_len": 0.5273360310057544,
+      "rho_len": 0.10656383550414607,
+      "higher_is_more_factual": true
+    },
+    "udc_tail3_min": {
+      "metric": "udc_tail3_min",
+      "auc": 0.5333728346085104,
+      "ci_lo": 0.5076791110447714,
+      "ci_hi": 0.5645745940752596,
+      "partial_auc_len": 0.5321570842365941,
+      "rho_len": 0.0707266221223554,
+      "higher_is_more_factual": true
+    },
+    "udc_worst2_mean": {
+      "metric": "udc_worst2_mean",
+      "auc": 0.524288789777809,
+      "ci_lo": 0.5017075289640165,
+      "ci_hi": 0.5518877375591245,
+      "partial_auc_len": 0.5263367636020968,
+      "rho_len": -0.18968005001709223,
+      "higher_is_more_factual": true
+    },
+    "udc_range_tok": {
+      "metric": "udc_range_tok",
+      "auc": 0.5376118557759004,
+      "ci_lo": 0.5112549680599047,
+      "ci_hi": 0.5647841012454949,
+      "partial_auc_len": 0.5387684291426524,
+      "rho_len": 0.572306498515614,
+      "higher_is_more_factual": false
+    },
+    "tle_mean_tok_mean": {
+      "metric": "tle_mean_tok_mean",
+      "auc": 0.5227052430826575,
+      "ci_lo": 0.5016700889164678,
+      "ci_hi": 0.5492615573685287,
+      "partial_auc_len": 0.5226617966738029,
+      "rho_len": 0.0932959985495252,
+      "higher_is_more_factual": true
+    },
+    "tle_max_tok": {
+      "metric": "tle_max_tok",
+      "auc": 0.5123694922313327,
+      "ci_lo": 0.5005428469257764,
+      "ci_hi": 0.5400323605566439,
+      "partial_auc_len": 0.5114488778092223,
+      "rho_len": 0.3485143177042062,
+      "higher_is_more_factual": false
+    },
+    "tle_p75_tok": {
+      "metric": "tle_p75_tok",
+      "auc": 0.5156819063684944,
+      "ci_lo": 0.5009266486757349,
+      "ci_hi": 0.5443234480117236,
+      "partial_auc_len": 0.5161897799064853,
+      "rho_len": 0.1345206251100319,
+      "higher_is_more_factual": true
+    },
+    "response_length": {
+      "metric": "response_length",
+      "auc": 0.5171515935094062,
+      "ci_lo": 0.500951665724968,
+      "ci_hi": 0.5446218601030354,
+      "partial_auc_len": null,
+      "rho_len": null,
+      "higher_is_more_factual": true
+    }
+  },
+  "experiment": "50_gemma_feature_sweep",
+  "model": "google/gemma-4-e2b-it",
+  "use_chat_template": "always",
+  "elapsed_seconds": 204.96601724624634,
+  "n_errors": 0,
+  "errors": []
+}

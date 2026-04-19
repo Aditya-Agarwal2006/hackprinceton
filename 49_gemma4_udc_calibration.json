@@ -1,0 +1,10 @@
+{
+  "metric": "udc_median_tok",
+  "higher_is_more_factual": false,
+  "pass_threshold": 0.11039213492873666,
+  "review_threshold": 0.10351092601791968,
+  "aligned_hall_median": 0.0966297171071027,
+  "aligned_factual_median": 0.11727334383955365,
+  "source": "BENCH-2",
+  "notes": "Model=google/gemma-4-e2b-it"
+}

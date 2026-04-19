@@ -1,0 +1,43 @@
+{
+  "dataset": "bench2",
+  "n_examples": 1544,
+  "n_pairs": 772,
+  "hallucinated_fraction": 0.5,
+  "length_mean_hall": 6.0479274611398965,
+  "length_mean_factual": 5.410621761658031,
+  "results": {
+    "udc_scalar": {
+      "metric": "udc_scalar",
+      "auc": 0.7395668340089667,
+      "ci_lo": 0.7146297844199616,
+      "ci_hi": 0.7635646328131035,
+      "partial_auc_len": 0.7326069156218958,
+      "rho_len": 0.09857168930958222,
+      "higher_is_more_factual": false
+    },
+    "tle_scalar": {
+      "metric": "tle_scalar",
+      "auc": 0.5980529678649091,
+      "ci_lo": 0.5702925548025793,
+      "ci_hi": 0.6269960242895238,
+      "partial_auc_len": 0.588811109023061,
+      "rho_len": -0.202753272710615,
+      "higher_is_more_factual": true
+    },
+    "response_length": {
+      "metric": "response_length",
+      "auc": 0.5631627694703214,
+      "ci_lo": 0.5342329540010029,
+      "ci_hi": 0.5920294178382313,
+      "partial_auc_len": null,
+      "rho_len": null,
+      "higher_is_more_factual": false
+    }
+  },
+  "experiment": "49_gemma4_trajectory",
+  "model": "google/gemma-4-e2b-it",
+  "use_chat_template": "always",
+  "elapsed_seconds": 164.31391763687134,
+  "n_errors": 0,
+  "errors": []
+}
