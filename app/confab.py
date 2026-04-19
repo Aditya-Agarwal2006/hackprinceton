@@ -825,7 +825,7 @@ def _run_demo_k2_explanation(
 def _render_demo_tab() -> None:
     st.markdown(
         "Confab watches an AI's **hidden-state geometry** during a single forward pass to "
-        "detect when it's confabulating — before you ever read the answer."
+        "detect when it's confabulating, before you ever read the answer."
     )
     st.markdown("#### Pick a subject")
 

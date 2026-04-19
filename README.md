@@ -49,13 +49,7 @@ That vector is the direction the model's representation moves at that layer.
 
 The next question was: what should we measure about these vectors?
 
-An early idea was an endpoint-style statistic, which we called TLE. That asked
-whether the update norm expands from early layers to late layers. But as we
-worked through it, that family turned out to be too endpoint-heavy and less
-mechanistically satisfying. It tells you something about the start and end of
-the trajectory, but not much about what happens in between.
-
-UDC came from shifting the focus to the thing we actually cared about:
+For this, we shifted our focus to the parameter we actually cared about:
 
 - not just how large the updates are
 - but whether **neighboring updates agree on where to go next**
@@ -125,15 +119,7 @@ Headline Gemma 4 E2B result:
 That is the core scientific result of the project. The signal does not vanish
 once the easy shortcut is removed.
 
-### 3. On Gemma, UDC beats TLE
-
-We kept endpoint-style TLE as a comparison feature, but on Gemma it was clearly
-weaker than UDC under controlled evaluation.
-
-That was an important design correction. It pushed the project toward the
-cleaner, more mechanistic metric.
-
-### 4. TruthfulQA gave us a useful negative result
+### 3. TruthfulQA gave us a useful negative result
 
 On TruthfulQA, `udc_median_tok` is near chance:
 
@@ -155,7 +141,7 @@ smoothly producing a misconception it has already internalized.
 
 That is a narrower claim, but it is a much more defensible one.
 
-### 5. Some transfer ideas did not survive
+### 4. Some transfer ideas did not survive
 
 We also tried to push the method into broader product-style settings, especially
 administrative and clinical validation workflows. Those results were weak and
@@ -177,14 +163,7 @@ Workaround:
 - build BENCH-2
 - headline only the length-controlled results
 
-### Problem 2: The old detector story was too endpoint-heavy
-
-Workaround:
-
-- move away from TLE as the main signal
-- center the project on UDC instead
-
-### Problem 3: Raw UDC values are not directly interpretable across models
+### Problem 2: Raw UDC values are not directly interpretable across models
 
 Workaround:
 
@@ -193,7 +172,7 @@ Workaround:
 - keep the headline scientific result in AUC space, not in one arbitrary raw
   threshold
 
-### Problem 4: The geometry visual was too hard to read
+### Problem 3: The geometry visual was too hard to read
 
 Workaround:
 
@@ -203,7 +182,7 @@ Workaround:
 - normalize arrow lengths so the visual shows direction only, which matches what
   UDC actually measures
 
-### Problem 5: The full live model flow was too heavy for a laptop demo
+### Problem 4: The full live model flow was too heavy for a laptop demo
 
 Workaround:
 
