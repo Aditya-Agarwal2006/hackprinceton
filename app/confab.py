@@ -1318,12 +1318,7 @@ def main() -> None:
     )
 
     st.title("Confab")
-
-    demo_tab, benchmark_tab = st.tabs(["🎯 Demo", "Benchmark Audit"])
-    with demo_tab:
-        _render_demo_tab()
-    with benchmark_tab:
-        _render_benchmark_tab()
+    _render_demo_tab()
 
 
 if __name__ == "__main__":
