@@ -1,4 +1,4 @@
-# Colab GPU Instructions for Component 1
+# Colab GPU Instructions: Gemma 4 E2B Reproduction
 
 These are the exact steps to run the UDC engine on **Gemma 4 E2B** in Google
 Colab.
@@ -329,16 +329,11 @@ paraphrases. That is expected. Step 2 fixes this.
 
 ---
 
-## 13. Run the demo case scorer — Step 2: short-format pairs
+## 14. Score the short-format demo pairs
 
-Long educational explanations (~100 tokens) don't work with the BENCH-2
-calibration — all scores land in FAIL territory because the per-token signal
-is diluted. BENCH-2 answers average 5–6 tokens. Step 2 uses very short
-1-sentence answers (15–30 tokens) that match the calibration's training range.
-
-Both factual and confabulated answers are hard-coded in the script. Confabulated
-answers contain multiple specific errors per sentence (wrong names, wrong years,
-wrong processes) so most response tokens are processing incorrect information.
+Demo answers are kept short (15–30 tokens) to match the BENCH-2 calibration's
+training range; longer explanations dilute the per-token signal. The factual /
+confabulated pairs live in `51c_short_format.py`.
 
 Upload to `/content` (flat):
 - `udc_engine.py`, `calibration.py`, `eval_utils.py`, `feature_metrics.py`
@@ -355,44 +350,5 @@ Run:
 
 Expected runtime: ~3–5 minutes (scoring only, 8 total forward passes).
 
-All pairs redesigned to use **categorical/conceptual errors** (not named-entity
-swaps). Named-entity swaps (different person, different city) barely move UDC
-because the surrounding sentence structure is identical. Categorical errors
-(wrong genre, wrong outcome, wrong mathematical operation) produce stronger
-internal conflict in Gemma's hidden states.
-
-Injected errors per subject:
-- **History:** Confederacy won (not Union) — opposite outcome; wrong year; wrong
-  social consequence. Every downstream claim inverts.
-- **Science:** nucleus (not mitochondria) — wrong organelle category; ADP not
-  ATP; photosynthesis not respiration. All four claims wrong.
-- **English:** Hamlet is a comedy (not tragedy) — categorical genre error;
-  celebration not revenge; coronation not murder. Opposite emotional register.
-- **Math:** derivative measures area (describes the integral, not the derivative)
-  — wrong mathematical operation, categorical inverse.
-
-Run (first attempt — use BENCH-2 calibration):
-
-```python
-!python 51c_short_format.py \
-  --model google/gemma-4-e2b-it \
-  --device cuda
-```
-
-**If BENCH-2 calibration still doesn't produce PASS vs FAIL verdicts:**
-
-```python
-!python 51c_short_format.py \
-  --model google/gemma-4-e2b-it \
-  --device cuda \
-  --demo-calibrate
-```
-
-The `--demo-calibrate` flag fits a calibration from the 8 demo examples
-(4 factual + 4 confab, which we have ground-truth labels for). This is honest:
-the demo uses demo-calibrated thresholds; the benchmark tab still uses BENCH-2.
-It also saves `outputs/demo_calibration.json` alongside the fixture.
-
-**After the run:** download both `outputs/51c_short_scored.json` and
-(if used) `outputs/demo_calibration.json` → commit as
-`app/demo_data/demo_cases.json` and `app/demo_data/demo_calibration.json`.
+**After the run:** download `outputs/51c_short_scored.json` and commit it as
+`app/demo_data/demo_cases.json`.

@@ -257,10 +257,8 @@ hackprinceton/
 ├── scripts/              # Calibration, geometry, and bundle-building
 ├── tests/                # Unit tests
 ├── notebooks/            # Colab notebook for reproducing Gemma runs
-├── docs/                 # Writeup and slide outline
 ├── COLAB_GPU.md          # Step-by-step GPU reproduction instructions
-├── requirements.txt      # Python dependencies
-└── PROJECT_STATUS.md     # Current build status
+└── requirements.txt      # Python dependencies
 ```
 
 ## Running the demo app locally
@@ -334,6 +332,4 @@ pytest
 
 ## Key docs
 
-- [`docs/hackprinceton_writeup.md`](docs/hackprinceton_writeup.md): full blog-style writeup
 - [`COLAB_GPU.md`](COLAB_GPU.md): step-by-step GPU reproduction guide
-- [`PROJECT_STATUS.md`](PROJECT_STATUS.md): current build status
