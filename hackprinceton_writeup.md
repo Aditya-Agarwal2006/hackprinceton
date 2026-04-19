@@ -1,5 +1,7 @@
 # Confab: What We Learned By Looking Inside The Model
 
+**HackPrinceton Spring 2026 - Aditya Agarwal & Vaghesan Sundaram**
+
 ## What problem we investigated and why
 
 We wanted to know whether an LLM gives away a confabulated answer **inside its
@@ -87,7 +89,7 @@ The interpretation is local:
   local coherence is higher
 - when they swing apart or reverse, local coherence is lower
 
-That does **not** mean “a smoother line is automatically true.” It means:
+That does **not** mean "a smoother line is automatically true." It means:
 
 - for labeled factual examples, the model often shows more coherent local update
   dynamics
@@ -195,7 +197,7 @@ Workaround:
 
 Workaround:
 
-- stop showing the whole-answer “spaghetti” view as the main visual
+- stop showing the whole-answer "spaghetti" view as the main visual
 - zoom into a short consecutive token window and short layer slice where the
   coherence gap is strongest
 - normalize arrow lengths so the visual shows direction only, which matches what
@@ -254,5 +256,105 @@ a real signal. In our case, that signal is Update Direction Coherence:
 - narrow enough to have a real scope boundary
 - interpretable enough to turn into a live demo
 
-That is a much better outcome than a flashy “truth detector” claim. It is a
+That is a much better outcome than a flashy "truth detector" claim. It is a
 smaller claim, but a real one.
+
+---
+
+## Repo structure
+
+```
+hackprinceton/
+├── app/                  # Streamlit demo + core UDC modules
+│   ├── confab.py         # Main app shell
+│   ├── udc_engine.py     # Hidden-state extraction and UDC computation
+│   ├── calibration.py    # Calibrated verdict thresholds
+│   ├── gemini_client.py  # Gemini API reasoning layer
+│   ├── visualization.py  # Plotly charts, gauges, heatmaps
+│   ├── scoring.py        # Risk scoring adapter
+│   ├── geometry.py       # 3D vector geometry helpers
+│   └── demo_data/        # Precomputed fixtures for the demo
+├── experiments/          # Benchmark runners and research scripts
+├── scripts/              # Calibration, geometry, and bundle-building
+├── tests/                # Unit tests
+├── notebooks/            # Colab notebook for reproducing Gemma runs
+├── docs/                 # Writeup and slide outline
+├── COLAB_GPU.md          # Step-by-step GPU reproduction instructions
+├── requirements.txt      # Python dependencies
+└── PROJECT_STATUS.md     # Current build status
+```
+
+## Running the demo app locally
+
+The app uses precomputed Gemma artifacts, since computing it in realtime would be unfeasible for a demo.
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+streamlit run app/confab.py
+```
+
+To enable the Gemini explanation layer (optional):
+
+```bash
+export GEMINI_API_KEY=your_key_here
+```
+
+The app has two tabs:
+
+- **Demo**: curated factual vs confabulated examples, token heatmaps, focused
+  hidden-state geometry, and Gemini explanations
+- **Benchmark Audit**: the benchmark-shortcut story, BENCH-2, headline Gemma
+  numbers, and the TruthfulQA scope boundary
+
+## Reproducing the Gemma results
+
+All Gemma experiments were run on Google Colab with a T4/A100 GPU.
+
+See [`COLAB_GPU.md`](COLAB_GPU.md) for the complete step-by-step reproduction
+guide, including:
+
+- which files to upload
+- how to authenticate for gated Gemma access
+- smoke test → BENCH-2 benchmark → calibration → feature sweep → demo case
+  generation → 3D geometry precompute
+- what each output file is and where it goes
+
+The Colab notebook at `notebooks/gemma_results_colab.ipynb` is a clean
+single-notebook entry point that runs the same pipeline.
+
+### Key research scripts
+
+| Script | Purpose |
+|---|---|
+| `experiments/49_gemma4_trajectory.py` | BENCH-2 + TruthfulQA benchmark run |
+| `experiments/50_gemma_feature_sweep.py` | One-pass feature sweep across all metrics |
+| `experiments/51_demo_cases.py` | Demo case generation |
+| `scripts/calibrate_thresholds.py` | Calibrated verdict thresholds from BENCH-2 |
+| `scripts/precompute_demo_geometry.py` | 3D geometry bundle for the app |
+| `scripts/build_demo_data_bundle.py` | Package demo data for the app |
+
+Cross-architecture wrappers (included for reference):
+
+- `experiments/52_mistral7b_trajectory.py`
+- `experiments/53_qwen25_trajectory.py`
+
+## Tests
+
+```bash
+source .venv/bin/activate
+
+# Targeted app sanity suite
+pytest tests/test_visualization.py tests/test_confab_audit.py tests/test_live_analysis.py
+
+# Full suite
+pytest
+```
+
+## Key docs
+
+- [`docs/hackprinceton_writeup.md`](docs/hackprinceton_writeup.md): full blog-style writeup
+- [`COLAB_GPU.md`](COLAB_GPU.md): step-by-step GPU reproduction guide
+- [`PROJECT_STATUS.md`](PROJECT_STATUS.md): current build status
